@@ -1,8 +1,8 @@
 {
-  "name": "mesto-react",
+  "name": "mesto-express",
   "version": "0.2.1",
   "private": true,
-  "homepage": "https://loki87by.github.io/mesto-react/",
+  "homepage": "https://loki87by.github.io/mesto-express/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -15,7 +15,8 @@
     "react-scripts": "^3.4.3"
   },
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
