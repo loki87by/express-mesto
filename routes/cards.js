@@ -1,6 +1,8 @@
+//**импорты
 const cards = require('express').Router();
 const path = require('path');
 const fs = require('fs');
+//**функционал
 const cardList = path.join(__dirname, '..', 'data', 'cards.json');
 cards.get('/', (req, res) => {
 fs.readFile(cardList, {encoding: 'utf8'}, (err, data) => {
@@ -11,4 +13,5 @@ if(err) {
   catch(err) {console.log(err.message)}
 });
 });
+//**экспорт
 module.exports = { cards }
