@@ -13,9 +13,20 @@ parserOptions:
   sourceType: module
 plugins:
   - react
-rules: {
-  'allowAfterThis': true,
-  'allowAfterSuper': true,
-  'allowAfterThisConstructor': true,
-  'enforceInMethodNames': true
-  }
+settings:
+  react:
+    version: detect
+ignorePatterns:
+  - /public/*.js
+rules:
+  arrow-body-style:
+    - error
+    - always
+  consistent-return:
+    - off
+  no-console:
+    - off
+  array-callback-return:
+    - off
+  no-underscore-dangle:
+    - off
