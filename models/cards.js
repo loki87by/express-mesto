@@ -11,7 +11,7 @@ const cardSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Введите ссылку в формате http(s)://'],
     validate: {
-      validator (str) {
+      validator(str) {
         return /https?:\/{2}\S+/gi.test(str);
       },
       // eslint-disable-next-line arrow-body-style

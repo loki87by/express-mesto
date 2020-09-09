@@ -1,6 +1,6 @@
 {
   "name": "mesto-express",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": true,
   "homepage": "https://loki87by.github.io/mesto-express/",
   "dependencies": {
@@ -8,8 +8,6 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "express": "^4.17.1",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
     "mongoose": "^5.10.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -40,7 +38,9 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.6.0",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-react": "^7.20.6",
     "gh-pages": "^3.1.0",
     "nodemon": "^2.0.4"

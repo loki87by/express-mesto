@@ -23,10 +23,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use((req, res, next) => {
   req.user = {
+    // eslint-disable-next-line quotes, comma-dangle
     _id: "5f55fe32484648230c101c87"
   };
   next();
-})
+});
 app.use('/cards', cardRouter);
 app.use('/users', userRouter);
 app.use('*', pattern);
