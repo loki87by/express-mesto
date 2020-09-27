@@ -23,17 +23,20 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 // **функционал
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use((req, res, next) => {
-  req.user = {
-    // eslint-disable-next-line quotes, comma-dangle
-    _id: "5f55fe32484648230c101c87"
-  };
-  next();
-});
+
+app.use(auth);
 app.use('/cards', cardRouter);
 app.use('/users', userRouter);
 app.use('*', pattern);
-app.use(auth);
+app.use((err, req, res, next) => {
+  const { statusCode = 500, message } = err;
+  res.status(statusCode).send({
+    message: statusCode === 500
+      ? 'На сервере произошла ошибка'
+      : message,
+  });
+  next(err);
+});
 app.listen(PORT, () => {
   console.log('Server started');
 });

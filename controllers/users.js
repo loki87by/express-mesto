@@ -4,7 +4,7 @@
 // **импорт модели
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/users');
+const User = require('../models/user');
 
 // **список пользователей
 module.exports.getUsers = (req, res) => {

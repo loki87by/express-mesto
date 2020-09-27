@@ -1,7 +1,7 @@
 /* eslint-disable no-else-return */
 /* eslint-disable no-useless-return */
 // **импорт модели
-const Card = require('../models/cards');
+const Card = require('../models/card');
 
 // **создание карточки
 module.exports.createCard = (req, res) => {
