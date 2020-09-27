@@ -5,8 +5,11 @@ const Card = require('../models/cards');
 
 // **создание карточки
 module.exports.createCard = (req, res) => {
-  const { name, link, owner = req.user._id } = req.body;
-  Card.create({ name, link, owner })
+  Card.create({
+    name: req.body.name,
+    link: req.body.link,
+    owner: req.user._id,
+  })
     .then((card) => res.send({ data: card }))
     .catch((err) => {
       // eslint-disable-next-line quotes

@@ -1,8 +1,10 @@
 // **импорты
 const express = require('express');
-const mongoose = require('mongoose');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+// const { createUser, login } = require('./controllers/users');
+const auth = require('./middlewares/auth');
 const cardRouter = require('./routes/cardRouter');
 const userRouter = require('./routes/userRouter');
 const { pattern } = require('./routes/pattern');
@@ -31,6 +33,7 @@ app.use((req, res, next) => {
 app.use('/cards', cardRouter);
 app.use('/users', userRouter);
 app.use('*', pattern);
+app.use(auth);
 app.listen(PORT, () => {
   console.log('Server started');
 });
